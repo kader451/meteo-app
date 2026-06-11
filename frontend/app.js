@@ -42,7 +42,7 @@ const elementVersConnexion = document.querySelector("#versConnexion");
 elementBoutonConnexion.addEventListener("click", async () => {
     try {
         // Envoie email + mot de passe au backend
-        const response = await fetch("http://localhost:3000/auth/connexion", {
+        const response = await fetch("https://meteo-app-2pyg.onrender.com/auth/connexion", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -93,7 +93,7 @@ async function recupererMeteo(ville) {
     try {
         // Appel au backend avec le token dans le header
         // Le backend appellera OpenWeatherMap avec la clé API cachée
-        const response = await fetch(`http://localhost:3000/meteo?ville=${ville}`, {
+        const response = await fetch(`https://meteo-app-2pyg.onrender.com/meteo?ville=${ville}`, {
             headers: { Authorization: `Bearer ${token}` }
         });
 
@@ -152,7 +152,7 @@ elementVersConnexion.addEventListener("click", () => {
 // Envoie les données d'inscription au backend
 elementBoutonInscription.addEventListener("click", async () => {
     try {
-        const response = await fetch("http://localhost:3000/auth/inscription", {
+        const response = await fetch("https://meteo-app-2pyg.onrender.com/auth/inscription", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -193,7 +193,7 @@ function afficherBoutonFavori() {
 async function chargerFavoris() {
     try {
         // Récupère les favoris de l'utilisateur connecté
-        const response = await fetch("http://localhost:3000/favoris", {
+        const response = await fetch("https://meteo-app-2pyg.onrender.com/favoris", {
             headers: { Authorization: `Bearer ${token}` }
         });
 
@@ -232,7 +232,7 @@ elementBoutonFavori.addEventListener("click", async () => {
         const ville = elementNomVille.textContent;
 
         // Envoie la ville au backend avec le token
-        await fetch("http://localhost:3000/favoris", {
+        await fetch("https://meteo-app-2pyg.onrender.com/favoris", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -253,7 +253,7 @@ elementBoutonFavori.addEventListener("click", async () => {
 async function supprimerFavori(id) {
     try {
         // Envoie une requête DELETE au backend avec l'id du favori
-        await fetch(`http://localhost:3000/favoris/${id}`, {
+        await fetch(`https://meteo-app-2pyg.onrender.com/favoris/${id}`, {
             method: "DELETE",
             headers: { Authorization: `Bearer ${token}` }
         });
