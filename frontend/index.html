@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <title>App Météo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <!-- Formulaire de connexion -->
+      <div id="formConnexion">
+        <h1>App Météo</h1>
+        <input id="email" type="email" placeholder="Email..." />
+        <input id="motDePasse" type="password" placeholder="Mot de passe..." />
+        <button id="boutonConnexion">Se connecter</button>
+        <p id="erreurConnexion"></p>
+        <p>Pas de compte ? <span id="versInscription">S'inscrire</span></p>
+      </div>
+
+
+      <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- Formulaire d'inscription -->
+<div id="formInscription" style="display:none">
+    <h1>App Météo</h1>
+    <input id="emailInscription" type="email" placeholder="Email...">
+    <input id="motDePasseInscription" type="password" placeholder="Mot de passe...">
+    <button id="boutonInscription">S'inscrire</button>
+    <p id="erreurInscription"></p>
+    <p>Déjà un compte ? <span id="versConnexion">Se connecter</span></p>
+</div>
+
+
+
+
+
+      <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+      <div id="appMeteo" style="display: none">
+        <h1>App Météo de Ludo</h1>
+        <button id="boutonDeDeconnexion">Se déconnecter</button>
+
+        <div id="recherche">
+          <input id="ville" type="text" placeholder="Entre une ville" />
+          <button id="bouton">Rechecher</button>
+        </div>
+
+        <div id="resultat">
+          <h2 id="nomVille"></h2>
+          <p id="temperature"></p>
+          <p id="description"></p>
+        </div>
+
+    <button id="boutonFavori" style="display:none">⭐ Ajouter aux favoris</button>
+
+    <div id="favoris">
+        <h3>Mes villes favorites</h3>
+        <ul id="listeFavoris"></ul>
+    </div>
+    
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

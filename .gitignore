@@ -1,0 +1,11 @@
+# Dépendances
+node_modules/
+
+# Variables sensibles
+.env
+
+# Logs
+*.log
+
+# OS
+.DS_Store
