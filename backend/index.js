@@ -14,7 +14,9 @@ const rateLimit = require("express-rate-limit");
 const app = express();
 
 // Middlewares — s'exécutent sur chaque requête
-app.use(cors()); // autorise le frontend à parler au backend
+app.use(cors({
+    origin: "https://meteo-ludo.vercel.app"
+}));// autorise le frontend à parler au backend
 app.use(express.json()); // permet de lire le JSON des requêtes
 
 // Rate limiting général — toutes les routes
